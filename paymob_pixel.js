@@ -78,7 +78,8 @@
       Text_Color_For_Input_Fields: INK,
       Color_For_Text_Placeholder: "#8A8A90",
       Width_of_Container: "100%",
-      Vertical_Padding: "8",
+      // No Vertical_Padding: Pixel sizes the card-number frame from it (twice the value), and "8"
+      // left a 16px sliver nobody could type into. Its default gives the frame its 80px.
       Vertical_Spacing_between_components: "14",
       Container_Padding: "0",
     };
