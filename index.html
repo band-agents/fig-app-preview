@@ -18,7 +18,14 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="FIG: forty international fashion brands, delivered free anywhere in Egypt.">
+  <meta name="description" content="FIG: international fashion brands, delivered free anywhere in Egypt.">
+
+  <!-- The app talks to these as soon as it starts. Opening the connections now, while the app itself
+       is still downloading, takes a round trip or two off the first screen on a phone network. -->
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fig-fashion-app.medusajs.app" crossorigin>
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -35,8 +42,8 @@
     /* Shown while the app downloads, so a slow connection sees FIG rather than a blank page. */
     #fig-splash { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center;
       justify-content: center; background: #fff; transition: opacity .35s ease; }
-    #fig-splash span { font: 700 34px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      letter-spacing: .04em; color: #0F0F10; animation: fig-breathe 1.6s ease-in-out infinite; }
+    #fig-splash span { font: 500 26px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      letter-spacing: .34em; margin-left: .34em; color: #1A1A1A; animation: fig-breathe 1.8s ease-in-out infinite; }
     @keyframes fig-breathe { 0%, 100% { opacity: .3 } 50% { opacity: 1 } }
   </style>
 </head>
