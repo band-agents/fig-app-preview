@@ -31,8 +31,25 @@
 
   <title>FIG</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    /* Shown while the app downloads, so a slow connection sees FIG rather than a blank page. */
+    #fig-splash { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center;
+      justify-content: center; background: #fff; transition: opacity .35s ease; }
+    #fig-splash span { font: 700 34px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      letter-spacing: .04em; color: #0F0F10; animation: fig-breathe 1.6s ease-in-out infinite; }
+    @keyframes fig-breathe { 0%, 100% { opacity: .3 } 50% { opacity: 1 } }
+  </style>
 </head>
 <body>
+  <div id="fig-splash" aria-hidden="true"><span>FIG</span></div>
+  <script>
+    window.addEventListener("flutter-first-frame", function () {
+      var splash = document.getElementById("fig-splash");
+      if (!splash) return;
+      splash.style.opacity = "0";
+      setTimeout(function () { splash.remove(); }, 400);
+    });
+  </script>
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader
